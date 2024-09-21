@@ -1,0 +1,14 @@
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\obj\Debug\net8.0\SimpleTaskManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\obj\Debug\net8.0\SimpleTaskManagement.AssemblyInfoInputs.cache
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\obj\Debug\net8.0\SimpleTaskManagement.AssemblyInfo.cs
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\obj\Debug\net8.0\SimpleTaskManagement.csproj.CoreCompileInputs.cache
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\bin\Debug\net8.0\SimpleTaskManagement.exe
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\bin\Debug\net8.0\SimpleTaskManagement.deps.json
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\bin\Debug\net8.0\SimpleTaskManagement.runtimeconfig.json
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\bin\Debug\net8.0\SimpleTaskManagement.dll
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\bin\Debug\net8.0\SimpleTaskManagement.pdb
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\obj\Debug\net8.0\SimpleTaskManagement.dll
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\obj\Debug\net8.0\refint\SimpleTaskManagement.dll
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\obj\Debug\net8.0\SimpleTaskManagement.pdb
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\obj\Debug\net8.0\SimpleTaskManagement.genruntimeconfig.cache
+C:\Users\Ibrah\source\repos\SimpleTaskManagement\SimpleTaskManagement\obj\Debug\net8.0\ref\SimpleTaskManagement.dll
