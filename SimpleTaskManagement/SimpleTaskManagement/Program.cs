@@ -1,10 +1,10 @@
-﻿
+
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        //LoadTasksFromFile();
+        LoadTasksFromFile();
         ShowMenu();
     }
 
@@ -109,7 +109,7 @@ internal class Program
     static void MarkTaskAsCompleted()
     {
         Console.Clear();
-        ViewTasks();
+        ViewTasksAddition();
         Console.Write("Enter the task number to mark as completed: ");
         int taskNumber; //= int.Parse(Console.ReadLine()); // if taskNumber == null then error will happen 
         if (int.TryParse(Console.ReadLine(), out taskNumber) && taskNumber <= taskTitles.Count)
@@ -128,7 +128,7 @@ internal class Program
     static void DeleteTask()
     {
         Console.Clear();
-        ViewTasks();
+        ViewTasksAddition();
         Console.Write("Enter the task number to delete: ");
         int taskNumber; //= int.Parse(Console.ReadLine());
         if (int.TryParse(Console.ReadLine() , out taskNumber) && taskNumber <= taskTitles.Count)
@@ -150,25 +150,69 @@ internal class Program
         using (StreamWriter SW = new StreamWriter("tasks.txt"))
         for (int i = 0; i < taskTitles.Count; i++)
         {
-            SW.WriteLine($"{i + 1} - Task Title : {taskTitles[i]}");
-            SW.WriteLine($"    Task Descriptions : {taskDescriptions[i]} ");
-            SW.WriteLine($"    Task Status : {taskStatus[i]}");
-            SW.WriteLine("-------------------------------");
+            SW.WriteLine($"{taskTitles[i]}|{taskDescriptions[i]}|{taskStatus[i]}");
         }
     }
 
-    //static void LoadTasksFromFile()
-    //{
-    //    if(File.Exists("tasks.txt"))
-    //    {
-    //        string[] Lines = File.ReadAllLines("tasks.txt");
-    //        foreach (string Line in Lines)
-    //        {
-    //            string[] sr = Line.Split('|');
-    //            taskTitles.Add(sr[0]);
-    //            taskDescriptions.Add(sr[1]);
-    //            taskStatus.Add(bool.Parse(sr[2]));
-    //        }
-    //    }
-    //}
+    static void LoadTasksFromFile()
+    {
+        if (File.Exists("tasks.txt"))
+        {
+            Console.WriteLine("Loading tasks from file...");
+
+            string[] lines = File.ReadAllLines("tasks.txt");
+
+            foreach (string line in lines)
+            {
+                // تقسيم السطر إلى الأجزاء الثلاثة: العنوان، الوصف، والحالة
+                string[] parts = line.Split('|');
+
+                // التحقق من أن السطر يحتوي على 3 أجزاء قبل إضافتها إلى القوائم
+                if (parts.Length == 3)
+                {
+                    taskTitles.Add(parts[0].Trim());
+                    taskDescriptions.Add(parts[1].Trim());
+
+                    // محاولة تحويل الحالة إلى قيمة منطقية (true/false)
+                    if (bool.TryParse(parts[2].Trim(), out bool isCompleted))
+                    {
+                        taskStatus.Add(isCompleted);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Invalid task status in line: {line}. Skipping...");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Invalid task format in line: {line}. Skipping...");
+                }
+            }
+
+            Console.WriteLine("Tasks loaded successfully from file.");
+        }
+        else
+        {
+            Console.WriteLine("Task file not found.");
+        }
+
+        Console.WriteLine("\nPress Enter to Continue...");
+        Console.ReadLine();
+    }
+
+
+    static void ViewTasksAddition()
+    {
+        Console.Clear();
+        Console.WriteLine("\n Tasks:");
+        for (int i = 0; i < taskStatus.Count; i++)
+        {
+            string status = taskStatus[i] ? "Complete" : "Pending";      //Ternary Operator
+            Console.WriteLine($"{i + 1} - Task Title : {taskTitles[i]}");
+            Console.WriteLine($"    Task Descriptions : {taskDescriptions[i]} ");
+            Console.WriteLine($"    Task Status : {status}");
+            Console.WriteLine("-------------------------------");
+        }
+    }
+
 }
